@@ -29,7 +29,6 @@ export default function Carousel({ items }) {
           <SwiperSlide key={index}>
             <div className="cursor-pointer w-100 flex flex-col items-center pt-15 py-20 bg-white text-black">
               <div className="h-50 w-50">
-
                 <div className="relative w-full h-50">
                   <Image
                     src="/img/watch.png"
@@ -38,7 +37,6 @@ export default function Carousel({ items }) {
                     className="object-cover rounded-lg"
                   />
                 </div>
-
               </div>
               <p className="text-gray">Samsumg smart watch</p>
             </div>
