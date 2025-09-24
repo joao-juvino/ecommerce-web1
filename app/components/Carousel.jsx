@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./custom.css";
-import Image from "next/image";
+import Card from "@/app/components/Card";
 
 export default function Carousel({ items }) {
   return (
@@ -27,19 +27,7 @@ export default function Carousel({ items }) {
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="cursor-pointer w-100 flex flex-col items-center pt-15 py-20 bg-white text-black">
-              <div className="h-50 w-50">
-                <div className="relative w-full h-50">
-                  <Image
-                    src="/img/watch.png"
-                    alt="Relógio"
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-              <p className="text-gray">Samsumg smart watch</p>
-            </div>
+            <Card/>
           </SwiperSlide>
         ))}
       </Swiper>
