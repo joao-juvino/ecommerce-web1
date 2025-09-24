@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import ViewItemChange from "./ViewItemChange";
 
 export default function ViewItem() {
     const [displayZoom, setDisplayZoom] = useState("none");
@@ -29,47 +30,25 @@ export default function ViewItem() {
         element.style.setProperty("--zoom-y", "0%");
     }
 
-    function handleChangeImage(imageURL) {
-        setCurrentImage(imageURL);
-    }
-
     return (
         <div className="flex">
             <div className="flex flex-col gap-3">
-                <div
-                    style={{
-                        borderColor: currentImage === '/img/watch.png' ? '#ba4949' : '#d1d5db',
-                    }}
-                    className="cursor-pointer relative w-15 h-15 rounded-sm border-1"
-                    onMouseOver={() => handleChangeImage("/img/watch.png")}
-                >
-                    <Image
-                        src="/img/watch.png"
-                        alt="Relógio"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                </div>
-                <div
-                    style={{
-                        borderColor: currentImage === '/img/watchback.png' ? '#ba4949' : '#d1d5db',
-                    }}
-                    className="cursor-pointer relative w-15 h-15 rounded-sm border-1"
-                    onMouseOver={() => handleChangeImage("/img/watchback.png")}
-                >
-                    <Image
-                        src="/img/watchback.png"
-                        alt="Relógio"
-                        fill
-                        className="object-cover rounded-lg"
-                    />
-                </div>
+                <ViewItemChange
+                    url={"/img/watch.png"}
+                    currentImage={currentImage}
+                    setCurrentImage={setCurrentImage}
+                />
+                <ViewItemChange
+                    url={"/img/watchback.png"}
+                    currentImage={currentImage}
+                    setCurrentImage={setCurrentImage}
+                />
             </div>
 
-            <div className="h-100 pt-10">
+            <div>
                 <div
                     id="zoom"
-                    className="relative w-full h-55 cursor-pointer"
+                    className="relative cursor-pointer"
                     style={{
                         "--url": `url(${currentImage || '/img/watch.png'})`,
                         "--display": displayZoom,
@@ -79,8 +58,8 @@ export default function ViewItem() {
                 >
                     <Image
                         src={currentImage || "/img/watch.png"}
-                        width={400}
-                        height={400}
+                        width={600}
+                        height={600}
                         alt="imagem do item"
                     />
                 </div>

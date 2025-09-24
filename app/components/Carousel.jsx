@@ -8,10 +8,10 @@ import "swiper/css/pagination";
 import "./custom.css";
 import Card from "@/app/components/Card";
 
-export default function Carousel({ items }) {
+export default function Carousel({ title, items }) {
   return (
     <div className="bg-white mt-10 !relative">
-      <h2 className="text-2xl p-10 pb-0">Ofertas do dia</h2>
+      <h2 className="text-2xl p-10 pb-0">{title}</h2>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}

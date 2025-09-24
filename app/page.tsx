@@ -16,9 +16,9 @@ export default function Home() {
     <>
       <section>
         <div className="py-10 px-50 bg-[#ebebeb]">
-          <Carousel items={cards} />
-          <Carousel items={cards} />
-          <Carousel items={cards} />
+          <Carousel title={"Ofertas do dia"} items={cards} />
+          <Carousel title={"Ofertas do dia"} items={cards} />
+          <Carousel title={"Ofertas do dia"} items={cards} />
         </div>
       </section>
     </>
