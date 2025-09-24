@@ -2,10 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Price from "@/app/components/Price";
 
-export default function Card() {
+export default function Card({ showButton = false }) {
     return (
         <Link href="/item">
-            <div className="cursor-pointer flex flex-col items-center pt-5 py-20 bg-white text-black">
+            <div
+                style={{
+                    padding: showButton ? "30px 0px" : "80px 0px",
+                }}
+                className="cursor-pointer flex flex-col items-center !pt-2 bg-white text-black">
                 <div className="h-50 w-50">
                     <div className="relative w-full h-50">
                         <Image
@@ -23,6 +27,7 @@ export default function Card() {
                     installmentsAmount={12}
                     installmentsValue={15}
                 />
+                {showButton && <button className="bg-[#ba4949] text-white mt-5 px-6 py-2 rounded-full">Adicionar</button>}
             </div>
         </Link>
     );
