@@ -1,0 +1,14 @@
+#zoom::after{
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: var(--display);
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: var(--url);
+    background-size: 180%;
+    background-position: var(--zoom-x) var(--zoom-y);
+    background-repeat: no-repeat;
+}
