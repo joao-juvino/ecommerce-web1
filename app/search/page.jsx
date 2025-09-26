@@ -5,7 +5,7 @@ import Card from "@/app/components/Card";
 export default function Search(){
     return (
         <div className="flex">
-            <div className="w-80 p-5 flex flex-col gap-5 bg-white min-h-dvh">
+            <div className="w-80 p-10 flex flex-col gap-5 bg-white min-h-dvh">
                 <div>
                     <h2 className="font-bold">Elegivél a frete grátis</h2>
                     <div className="flex gap-2">
