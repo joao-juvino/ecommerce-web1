@@ -14,10 +14,12 @@ export default function Menu() {
                 </div>
                 <input className="grow-1 bg-white px-7 py-2" type="search" placeholder="pesquisar" />
                 <ul className="flex gap-10">
-                    <li className="cursor-pointer flex items-center text-white relative">
-                        <ShoppingCart className="w-8 h-8" />
-                        <span className="absolute mt-[100%] ml-[100%] font-bold">{items.length}</span>
-                    </li>
+                    <Link href="/cart">
+                        <li className="cursor-pointer flex items-center text-white relative">
+                            <ShoppingCart className="w-8 h-8" />
+                            <span className="absolute mt-[100%] ml-[100%] font-bold">{items.length}</span>
+                        </li>
+                    </Link>
                     <li className="flex justify-center items-center cursor-pointer bg-white text-gray-800 py-2 px-6">Login</li>
                 </ul>
             </nav>

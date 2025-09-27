@@ -4,10 +4,10 @@ import Rating from "@/app/components/Rating";
 import Price from "@/app/components/Price";
 import ViewItem from "@/app/components/ViewItem";
 import Carousel from "@/app/components/Carousel";
-import items from "@/mock/items.json";
-import "./zoom.css";
 import { useParams } from "next/navigation";
 import { getNItems } from "@/utils/functions";
+import items from "@/mock/items.json";
+import "./zoom.css";
 
 export default function ItemDetails() {
     const params = useParams();

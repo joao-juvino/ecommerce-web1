@@ -57,7 +57,7 @@ export default function Search() {
                 <h2 className="text-2xl font-bold mb-5 text-gray-900">Resultados:</h2>
                 <div className="flex flex-wrap justify-start gap-5">
                     {getNItems(items).map(item => (
-                        <Card key={item.id} {...item}/>
+                        <Card key={item.id} {...item} showButton={true}/>
                     ))}
                 </div>
             </div>
