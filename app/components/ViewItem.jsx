@@ -1,16 +1,32 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react"; // Importa o useMemo
 import ViewItemChange from "./ViewItemChange";
 
 export default function ViewItem({ images = [] }) {
     const [currentImage, setCurrentImage] = useState('');
+    
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    // Usamos useMemo para garantir que 'fullUrlImages' só seja recalculado se 'images' mudar.
+    const fullUrlImages = useMemo(() => {
+        return images.map(img => ({
+            ...img,
+            url_imagem: img.url_imagem.startsWith('/static') ? `${baseUrl}${img.url_imagem}` : img.url_imagem
+        }));
+    }, [images, baseUrl]);
+
     useEffect(() => {
-      if (images && images.length > 0) {setCurrentImage(images[0].url_imagem);} 
-      else {setCurrentImage("/img/watch.png");}}, [images]);
+      if (fullUrlImages && fullUrlImages.length > 0) {
+        setCurrentImage(fullUrlImages[0].url_imagem);
+      } else {
+        setCurrentImage("/img/watch.png");
+      }
+    }, [fullUrlImages]); // Agora a dependência está correta e segura.
+
 
     function handleZoom(event) {
-        setDisplayZoom("block");
+        // ... a lógica do zoom continua a mesma
         const element = event.currentTarget;
         const rect = element.getBoundingClientRect();
         const width = element.offsetWidth;
@@ -19,21 +35,19 @@ export default function ViewItem({ images = [] }) {
         const y = ((event.clientY - rect.top) / height) * 100;
         element.style.setProperty("--zoom-x", `${x}%`);
         element.style.setProperty("--zoom-y", `${y}%`);
+        element.style.setProperty("--display", "block");
     }
 
     function handleRemoveZoom(event) {
-        setDisplayZoom("none");
+        // ... a lógica do zoom continua a mesma
         const element = event.currentTarget;
-        element.style.setProperty("--zoom-x", "0%");
-        element.style.setProperty("--zoom-y", "0%");
+        element.style.setProperty("--display", "none");
     }
     
-    const [displayZoom, setDisplayZoom] = useState("none");
     return (
         <div className="flex">
             <div className="flex flex-col gap-3">
-                {/* 3. Mapeia a lista de imagens para criar os botões de troca */}
-                {images.map((image) => (
+                {fullUrlImages.map((image) => (
                     <ViewItemChange
                         key={image.id} 
                         url={image.url_imagem}
@@ -46,14 +60,12 @@ export default function ViewItem({ images = [] }) {
                 <div
                     id="zoom"
                     className="relative cursor-pointer"
-                    style={{
-                        "--url": `url(${currentImage})`,
-                        "--display": displayZoom,
-                    }}
+                    style={{ "--url": `url(${currentImage})` }}
                     onMouseMove={handleZoom}
                     onMouseOut={handleRemoveZoom}
                 >
                     <Image
+                        key={currentImage}
                         src={currentImage}
                         width={600}
                         height={600}

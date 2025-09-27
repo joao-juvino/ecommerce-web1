@@ -1,5 +1,4 @@
 "use client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -9,6 +8,10 @@ import "./custom.css";
 import Card from "@/app/components/Card";
 
 export default function Carousel({ title, items }) {
+  if (!Array.isArray(items)) {
+    return null; 
+  }
+
   return (
     <div className="bg-white mt-10 !relative">
       <h2 className="text-2xl p-10 pb-0">{title}</h2>
@@ -25,9 +28,10 @@ export default function Carousel({ title, items }) {
           1280: { slidesPerView: 4 },
         }}
       >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>
-            <Card/>
+        {items.map((item) => (
+          <SwiperSlide key={item.id}>
+            {/* AQUI ESTÁ A CORREÇÃO */}
+            <Card product={item} showButton={true}/>
           </SwiperSlide>
         ))}
       </Swiper>

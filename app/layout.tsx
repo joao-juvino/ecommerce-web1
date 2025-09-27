@@ -1,22 +1,30 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Menu from "@/app/components/Menu";
-import { CartProvider } from "@/app/context/CartContext";
-import { AuthProvider } from "@/app/context/AuthContext"; // 1. Importar o AuthProvider
+import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext"; // Certifique-se que o caminho está correto
+import AppLayout from "./components/AppLayout"; // Importe o novo layout
 
-export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Meu Ecommerce",
+  description: "Criado com Next.js e FastAPI",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="pt-BR">
-      <body className="bg-[#ebebeb]">
-        {/* 2. Envolver os providers */}
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body className={inter.className}>
         <AuthProvider>
           <CartProvider>
-            <Menu />
-            <main className="w-full min-h-dvh">
+            <AppLayout>
               {children}
-            </main>
-            <footer className="w-full h-30 bg-[#ba4949] flex justify-center items-center text-white">
-              <p>@ecommerce</p>
-            </footer>
+            </AppLayout>
           </CartProvider>
         </AuthProvider>
       </body>
