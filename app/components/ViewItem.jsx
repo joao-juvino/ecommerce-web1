@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useState } from "react";
 import ViewItemChange from "./ViewItemChange";
 
-export default function ViewItem() {
+export default function ViewItem({ imgs }) {
     const [displayZoom, setDisplayZoom] = useState("none");
-    const [currentImage, setCurrentImage] = useState("/img/watch.png");
+    const [currentImage, setCurrentImage] = useState(imgs[0]);
 
     function handleZoom(event) {
         setDisplayZoom("block");
@@ -33,16 +33,14 @@ export default function ViewItem() {
     return (
         <div className="flex">
             <div className="flex flex-col gap-3">
-                <ViewItemChange
-                    url={"/img/watch.png"}
-                    currentImage={currentImage}
-                    setCurrentImage={setCurrentImage}
-                />
-                <ViewItemChange
-                    url={"/img/watchback.png"}
-                    currentImage={currentImage}
-                    setCurrentImage={setCurrentImage}
-                />
+                {imgs.map((url, index) => (
+                    <ViewItemChange
+                        key={index}
+                        url={url}
+                        currentImage={currentImage}
+                        setCurrentImage={setCurrentImage}
+                    />
+                ))}
             </div>
 
             <div>
@@ -58,8 +56,8 @@ export default function ViewItem() {
                 >
                     <Image
                         src={currentImage || "/img/watch.png"}
-                        width={600}
-                        height={600}
+                        width={350}
+                        height={350}
                         alt="imagem do item"
                     />
                 </div>

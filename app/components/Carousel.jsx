@@ -25,9 +25,9 @@ export default function Carousel({ title, items }) {
           1280: { slidesPerView: 4 },
         }}
       >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>
-            <Card/>
+        {items.map((item) => (
+          <SwiperSlide key={item.id}>
+            <Card {...item} />
           </SwiperSlide>
         ))}
       </Swiper>

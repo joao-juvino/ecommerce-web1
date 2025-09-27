@@ -2,6 +2,8 @@ import Stars from "@/app/components/Stars";
 import RangeSlider from "@/app/components/RangeSlider";
 import Card from "@/app/components/Card";
 import BasicFilter from "@/app/components/BasicFilter";
+import { getNItems } from "@/utils/functions";
+import items from "@/mock/items.json";
 
 export default function Search() {
     return (
@@ -54,16 +56,9 @@ export default function Search() {
             <div className="p-5">
                 <h2 className="text-2xl font-bold mb-5 text-gray-900">Resultados:</h2>
                 <div className="flex flex-wrap justify-start gap-5">
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
-                    <Card showButton={true} />
+                    {getNItems(items).map(item => (
+                        <Card key={item.id} {...item}/>
+                    ))}
                 </div>
             </div>
         </div>

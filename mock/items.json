@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "nome": "Smartphone Galaxy S22",
+        "preco_original": 4999.90,
+        "preco": 3799.90,
+        "parcelas": 10,
+        "valor_parcela": 379.99,
+        "avaliacoes": 1245,
+        "media_avaliacoes": 4.7,
+        "imgs": [
+            "/img/smartphone.png",
+            "/img/smartphonefront.png",
+            "/img/smartphoneback.png",
+            "/img/smartphonepencil.png"
+        ]
+    },
+    {
+        "id": 2,
+        "nome": "Notebook Dell Inspiron 15",
+        "preco_original": 5999.00,
+        "preco": 4899.00,
+        "parcelas": 12,
+        "valor_parcela": 408.25,
+        "avaliacoes": 860,
+        "media_avaliacoes": 4.5,
+        "imgs": [
+            "/img/notebookdellinspiron15.png",
+            "/img/notebookdellinspiron15back.png",
+            "/img/notebookdellinspiron15side.png"
+        ]
+    },
+    {
+        "id": 3,
+        "nome": "Fone Bluetooth JBL Tune 510BT",
+        "preco_original": 399.90,
+        "preco": 249.90,
+        "parcelas": 6,
+        "valor_parcela": 41.65,
+        "avaliacoes": 4320,
+        "media_avaliacoes": 4.8,
+        "imgs": [
+            "/img/fonebluetoothjbltune510bt.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/fonebluetoothjbltune510btback.png"
+        ]
+    },
+    {
+        "id": 4,
+        "nome": "Console PlayStation 5",
+        "preco_original": 4999.00,
+        "preco": 4499.00,
+        "parcelas": 12,
+        "valor_parcela": 374.91,
+        "avaliacoes": 15700,
+        "media_avaliacoes": 4.9,
+        "imgs": [
+            "/img/consoleplaystation5.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/consoleplaystation5.png"
+        ]
+    },
+    {
+        "id": 5,
+        "nome": "Aspirador Robô Xiaomi Mi Robot",
+        "preco_original": 2199.00,
+        "preco": 1799.00,
+        "parcelas": 10,
+        "valor_parcela": 179.90,
+        "avaliacoes": 3100,
+        "media_avaliacoes": 4.6,
+        "imgs": [
+            "/img/aspiradorroboxiaomimirobot.png",
+            "/img/aspiradorroboxiaomimirobottop.png"
+        ]
+    },
+    {
+        "id": 6,
+        "nome": "Smartphone Galaxy S22",
+        "preco_original": 4999.90,
+        "preco": 3799.90,
+        "parcelas": 10,
+        "valor_parcela": 379.99,
+        "avaliacoes": 1245,
+        "media_avaliacoes": 4.7,
+        "imgs": [
+            "/img/smartphone.png",
+            "/img/smartphonefront.png",
+            "/img/smartphoneback.png",
+            "/img/smartphonepencil.png"
+        ]
+    },
+    {
+        "id": 7,
+        "nome": "Notebook Dell Inspiron 15",
+        "preco_original": 5999.00,
+        "preco": 4899.00,
+        "parcelas": 12,
+        "valor_parcela": 408.25,
+        "avaliacoes": 860,
+        "media_avaliacoes": 4.5,
+        "imgs": [
+            "/img/notebookdellinspiron15.png",
+            "/img/notebookdellinspiron15back.png",
+            "/img/notebookdellinspiron15side.png"
+        ]
+    },
+    {
+        "id": 8,
+        "nome": "Fone Bluetooth JBL Tune 510BT",
+        "preco_original": 399.90,
+        "preco": 249.90,
+        "parcelas": 6,
+        "valor_parcela": 41.65,
+        "avaliacoes": 4320,
+        "media_avaliacoes": 4.8,
+        "imgs": [
+            "/img/fonebluetoothjbltune510bt.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/fonebluetoothjbltune510btback.png"
+        ]
+    },
+    {
+        "id": 9,
+        "nome": "Console PlayStation 5",
+        "preco_original": 4999.00,
+        "preco": 4499.00,
+        "parcelas": 12,
+        "valor_parcela": 374.91,
+        "avaliacoes": 15700,
+        "media_avaliacoes": 4.9,
+        "imgs": [
+            "/img/consoleplaystation5.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/consoleplaystation5.png"
+        ]
+    },
+    {
+        "id": 10,
+        "nome": "Aspirador Robô Xiaomi Mi Robot",
+        "preco_original": 2199.00,
+        "preco": 1799.00,
+        "parcelas": 10,
+        "valor_parcela": 179.90,
+        "avaliacoes": 3100,
+        "media_avaliacoes": 4.6,
+        "imgs": [
+            "/img/aspiradorroboxiaomimirobot.png",
+            "/img/aspiradorroboxiaomimirobottop.png"
+        ]
+    },
+    {
+        "id": 11,
+        "nome": "Smartphone Galaxy S22",
+        "preco_original": 4999.90,
+        "preco": 3799.90,
+        "parcelas": 10,
+        "valor_parcela": 379.99,
+        "avaliacoes": 1245,
+        "media_avaliacoes": 4.7,
+        "imgs": [
+            "/img/smartphone.png",
+            "/img/smartphonefront.png",
+            "/img/smartphoneback.png",
+            "/img/smartphonepencil.png"
+        ]
+    },
+    {
+        "id": 12,
+        "nome": "Notebook Dell Inspiron 15",
+        "preco_original": 5999.00,
+        "preco": 4899.00,
+        "parcelas": 12,
+        "valor_parcela": 408.25,
+        "avaliacoes": 860,
+        "media_avaliacoes": 4.5,
+        "imgs": [
+            "/img/notebookdellinspiron15.png",
+            "/img/notebookdellinspiron15back.png",
+            "/img/notebookdellinspiron15side.png"
+        ]
+    },
+    {
+        "id": 13,
+        "nome": "Fone Bluetooth JBL Tune 510BT",
+        "preco_original": 399.90,
+        "preco": 249.90,
+        "parcelas": 6,
+        "valor_parcela": 41.65,
+        "avaliacoes": 4320,
+        "media_avaliacoes": 4.8,
+        "imgs": [
+            "/img/fonebluetoothjbltune510bt.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/fonebluetoothjbltune510btback.png"
+        ]
+    },
+    {
+        "id": 14,
+        "nome": "Console PlayStation 5",
+        "preco_original": 4999.00,
+        "preco": 4499.00,
+        "parcelas": 12,
+        "valor_parcela": 374.91,
+        "avaliacoes": 15700,
+        "media_avaliacoes": 4.9,
+        "imgs": [
+            "/img/consoleplaystation5.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/consoleplaystation5.png"
+        ]
+    },
+    {
+        "id": 15,
+        "nome": "Aspirador Robô Xiaomi Mi Robot",
+        "preco_original": 2199.00,
+        "preco": 1799.00,
+        "parcelas": 10,
+        "valor_parcela": 179.90,
+        "avaliacoes": 3100,
+        "media_avaliacoes": 4.6,
+        "imgs": [
+            "/img/aspiradorroboxiaomimirobot.png",
+            "/img/aspiradorroboxiaomimirobottop.png"
+        ]
+    },
+    {
+        "id": 16,
+        "nome": "Smartphone Galaxy S22",
+        "preco_original": 4999.90,
+        "preco": 3799.90,
+        "parcelas": 10,
+        "valor_parcela": 379.99,
+        "avaliacoes": 1245,
+        "media_avaliacoes": 4.7,
+        "imgs": [
+            "/img/smartphone.png",
+            "/img/smartphonefront.png",
+            "/img/smartphoneback.png",
+            "/img/smartphonepencil.png"
+        ]
+    },
+    {
+        "id": 17,
+        "nome": "Notebook Dell Inspiron 15",
+        "preco_original": 5999.00,
+        "preco": 4899.00,
+        "parcelas": 12,
+        "valor_parcela": 408.25,
+        "avaliacoes": 860,
+        "media_avaliacoes": 4.5,
+        "imgs": [
+            "/img/notebookdellinspiron15.png",
+            "/img/notebookdellinspiron15back.png",
+            "/img/notebookdellinspiron15side.png"
+        ]
+    },
+    {
+        "id": 18,
+        "nome": "Fone Bluetooth JBL Tune 510BT",
+        "preco_original": 399.90,
+        "preco": 249.90,
+        "parcelas": 6,
+        "valor_parcela": 41.65,
+        "avaliacoes": 4320,
+        "media_avaliacoes": 4.8,
+        "imgs": [
+            "/img/fonebluetoothjbltune510bt.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/fonebluetoothjbltune510btback.png"
+        ]
+    },
+    {
+        "id": 19,
+        "nome": "Console PlayStation 5",
+        "preco_original": 4999.00,
+        "preco": 4499.00,
+        "parcelas": 12,
+        "valor_parcela": 374.91,
+        "avaliacoes": 15700,
+        "media_avaliacoes": 4.9,
+        "imgs": [
+            "/img/consoleplaystation5.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/consoleplaystation5.png"
+        ]
+    },
+    {
+        "id": 20,
+        "nome": "Aspirador Robô Xiaomi Mi Robot",
+        "preco_original": 2199.00,
+        "preco": 1799.00,
+        "parcelas": 10,
+        "valor_parcela": 179.90,
+        "avaliacoes": 3100,
+        "media_avaliacoes": 4.6,
+        "imgs": [
+            "/img/aspiradorroboxiaomimirobot.png",
+            "/img/aspiradorroboxiaomimirobottop.png"
+        ]
+    },
+    {
+        "id": 21,
+        "nome": "Smartphone Galaxy S22",
+        "preco_original": 4999.90,
+        "preco": 3799.90,
+        "parcelas": 10,
+        "valor_parcela": 379.99,
+        "avaliacoes": 1245,
+        "media_avaliacoes": 4.7,
+        "imgs": [
+            "/img/smartphone.png",
+            "/img/smartphonefront.png",
+            "/img/smartphoneback.png",
+            "/img/smartphonepencil.png"
+        ]
+    },
+    {
+        "id": 22,
+        "nome": "Notebook Dell Inspiron 15",
+        "preco_original": 5999.00,
+        "preco": 4899.00,
+        "parcelas": 12,
+        "valor_parcela": 408.25,
+        "avaliacoes": 860,
+        "media_avaliacoes": 4.5,
+        "imgs": [
+            "/img/notebookdellinspiron15.png",
+            "/img/notebookdellinspiron15back.png",
+            "/img/notebookdellinspiron15side.png"
+        ]
+    },
+    {
+        "id": 23,
+        "nome": "Fone Bluetooth JBL Tune 510BT",
+        "preco_original": 399.90,
+        "preco": 249.90,
+        "parcelas": 6,
+        "valor_parcela": 41.65,
+        "avaliacoes": 4320,
+        "media_avaliacoes": 4.8,
+        "imgs": [
+            "/img/fonebluetoothjbltune510bt.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/fonebluetoothjbltune510btback.png"
+        ]
+    },
+    {
+        "id": 24,
+        "nome": "Console PlayStation 5",
+        "preco_original": 4999.00,
+        "preco": 4499.00,
+        "parcelas": 12,
+        "valor_parcela": 374.91,
+        "avaliacoes": 15700,
+        "media_avaliacoes": 4.9,
+        "imgs": [
+            "/img/consoleplaystation5.png",
+            "/img/fonebluetoothjbltune510btside.png",
+            "/img/notebookdellinspiron15side.png",
+            "/img/consoleplaystation5.png"
+        ]
+    },
+    {
+        "id": 25,
+        "nome": "Aspirador Robô Xiaomi Mi Robot",
+        "preco_original": 2199.00,
+        "preco": 1799.00,
+        "parcelas": 10,
+        "valor_parcela": 179.90,
+        "avaliacoes": 3100,
+        "media_avaliacoes": 4.6,
+        "imgs": [
+            "/img/aspiradorroboxiaomimirobot.png",
+            "/img/aspiradorroboxiaomimirobottop.png"
+        ]
+    }
+]
