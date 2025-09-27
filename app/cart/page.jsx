@@ -4,10 +4,14 @@ import { useCart } from "@/app/context/CartContext";
 import { Minus, Plus } from "lucide-react";
 
 export default function Chart() {
-    const { items } = useCart();
+    const { items, addItem, removeItem, getTotal, getAmount } = useCart();
+
     return (
         <div className="bg-white mx-10 my-10 p-10">
-            <h2 className="text-3xl mb-5">Carrinho de Compras</h2>
+            <div className="flex justify-between">
+                <h2 className="text-2xl mb-5">Carrinho de Compras</h2>
+                <button className="cursor-pointer bg-[#ba4949] text-white w-40 h-12 ">Fechar pedido</button>
+            </div>
             <div className="flex flex-col">
                 {items.map(item => (
                     <div key={item.id} className="flex gap-5 border-t-1 border-gray-300 my-2">
@@ -27,18 +31,21 @@ export default function Chart() {
                                 <label className="text-gray-700 text-sm">Este pedido é para presente</label>
                             </div>
                             <div className="text-gray-700 flex gap-3 border-1 border-[#ba4949] w-fit px-3 py-1 rounded-full mt-3">
-                                <Minus className="cursor-pointer" />
-                                <span>{1}</span>
-                                <Plus className="cursor-pointer" />
+                                <Minus onClick={() => removeItem(item.id)} className="cursor-pointer" />
+                                <span>{item.amount}</span>
+                                <Plus onClick={() => addItem(item)} className="cursor-pointer" />
                             </div>
                         </div>
                         <div className="flex flex-col items-end py-5">
-                            <h3 className="text-lg font-bold mb-2">R${item.preco}</h3>
+                            <h3 className="text-xl font-bold mb-2">R${item.preco}</h3>
                             <p>ou em até {item.parcelas}x de</p>
                             <p>R$ {item.valor_parcela} sem juros</p>
                         </div>
                     </div>
                 ))}
+                <div className="flex self-end">
+                    <span className="text-lg text-gray-700">Subtotal ({getAmount()} produtos): <span className="font-bold">R$ {getTotal()}</span></span>
+                </div>
             </div>
         </div>
     );
