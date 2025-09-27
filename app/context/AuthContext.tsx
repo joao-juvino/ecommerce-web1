@@ -1,8 +1,11 @@
+// app/context/AuthContext.tsx
 "use client";
+
 import { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import apiClient from '@/app/services/api';
-import { loginUser, registerUser } from '@/app/services/authService.js';
+import { loginUser, registerUser } from '@/app/services/authService';
 import { useRouter } from 'next/navigation';
+
 interface User {
   id: number;
   nome: string;
@@ -10,11 +13,12 @@ interface User {
   tipo: 'cliente' | 'vendedor' | 'admin';
 }
 
-type RegisterData = {
+interface RegisterData {
   nome: string;
   email: string;
   senha: string;
-};
+  tipo: 'cliente' | 'vendedor';
+}
 
 interface AuthContextType {
   isAuthenticated: boolean;
@@ -29,10 +33,12 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
+
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     if (token) {
       apiClient.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      apiClient.get('/api/v1/usuarios/me').then(response => setUser(response.data)).catch(() => logout());
     }
   }, []);
 
@@ -43,23 +49,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       apiClient.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;
       const userResponse = await apiClient.get('/api/v1/usuarios/me');
       setUser(userResponse.data);
-      router.push('/'); 
+      router.push('/');
     } catch (error) {
       console.error("Falha no login", error);
       alert("Email ou senha inválidos.");
     }
   };
 
-const register = async (dados: RegisterData) => {
-  try {
-    await registerUser(dados);
-    alert('Cadastro realizado com sucesso! Verifique seu e-mail para ativar sua conta.');
-    router.push('/login');
-  } catch (error) {
-    console.error("Falha no cadastro", error);
-    alert('Não foi possível realizar o cadastro. Verifique os dados.');
-  }
-};
+  const register = async (dados: RegisterData) => {
+    try {
+      await registerUser(dados);
+      alert('Cadastro realizado! Por favor, verifique seu e-mail para ativar sua conta.');
+      router.push('/login');
+    } catch (error) {
+      console.error("Falha no cadastro", error);
+      alert('Não foi possível realizar o cadastro. Verifique os dados.');
+    }
+  };
 
   const logout = () => {
     setUser(null);

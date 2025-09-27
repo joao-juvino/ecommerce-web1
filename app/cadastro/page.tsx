@@ -6,7 +6,7 @@ export default function CadastroPage() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [tipo, setTipo] = useState('cliente'); 
+  const [tipo, setTipo] = useState<'cliente' | 'vendedor'>('cliente');
   const { register } = useAuth();
   const handleSubmit = async (e: React.FormEvent) => {e.preventDefault(); await register({ nome, email, senha, tipo });};
   return (
@@ -49,7 +49,7 @@ export default function CadastroPage() {
           <label className="block mb-2">O que você deseja?</label>
           <select 
             value={tipo}
-            onChange={(e) => setTipo(e.target.value)}
+            onChange={(e) => setTipo(e.target.value as 'cliente' | 'vendedor')}
             className="w-full p-2 border rounded text-black bg-white"
           >
             <option value="cliente">Apenas Comprar</option>
