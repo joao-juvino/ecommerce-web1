@@ -2,9 +2,20 @@
 import Image from "next/image";
 import { useCart } from "@/app/context/CartContext";
 import { Minus, Plus } from "lucide-react";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Chart() {
+    const router = useRouter();
     const { items, addItem, removeItem, getTotal, getAmount } = useCart();
+
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        if (!loggedInUser) {
+            router.push("/login");
+        }
+    }, [router]);
+    
 
     return (
         <div className="bg-white mx-10 my-10 p-10">

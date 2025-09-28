@@ -4,8 +4,19 @@ import Card from "@/app/components/Card";
 import BasicFilter from "@/app/components/BasicFilter";
 import { getNItems } from "@/utils/functions";
 import items from "@/mock/items.json";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Search() {
+    const router = useRouter();
+
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        if (!loggedInUser) {
+            router.push("/login");
+        }
+    }, [router]);
+
     return (
         <div className="flex">
             <div className="w-80 p-10 flex flex-col gap-5 bg-white h-dvh">
@@ -13,7 +24,7 @@ export default function Search() {
                 <BasicFilter
                     title="Elegivél a frete grátis"
                     items={[
-                        {name: "freeFreight", label: "Frete grátis"},
+                        { name: "freeFreight", label: "Frete grátis" },
                     ]}
                 />
 
@@ -21,11 +32,11 @@ export default function Search() {
                 <BasicFilter
                     title="Gênero"
                     items={[
-                        {name: "male", label: "Masculino"},
-                        {name: "female", label: "Feminino"},
-                        {name: "boy", label: "Menino"},
-                        {name: "girl", label: "Menina"},
-                        {name: "unissex", label: "Unissex"},
+                        { name: "male", label: "Masculino" },
+                        { name: "female", label: "Feminino" },
+                        { name: "boy", label: "Menino" },
+                        { name: "girl", label: "Menina" },
+                        { name: "unissex", label: "Unissex" },
                     ]}
                 />
 
@@ -49,7 +60,7 @@ export default function Search() {
                 <BasicFilter
                     title="Disponibilidade"
                     items={[
-                        {name: "stock", label: "Exibir item sem estoque"},
+                        { name: "stock", label: "Exibir item sem estoque" },
                     ]}
                 />
             </div>
@@ -57,7 +68,7 @@ export default function Search() {
                 <h2 className="text-2xl font-bold mb-5 text-gray-900">Resultados:</h2>
                 <div className="flex flex-wrap justify-start gap-5">
                     {getNItems(items).map(item => (
-                        <Card key={item.id} {...item} showButton={true}/>
+                        <Card key={item.id} {...item} showButton={true} />
                     ))}
                 </div>
             </div>

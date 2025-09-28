@@ -12,7 +12,7 @@ export default function Card({ id, nome, preco_original, preco, parcelas, valor_
     }
 
     return (
-        <Link href={`item/${id}`}>
+        <Link href={`/item/${id}`}>
             <div
                 style={{
                     padding: showButton ? "30px 0px" : "80px 0px",

@@ -1,5 +1,5 @@
 "use client";
-import { ShoppingCart, Store } from "lucide-react";
+import {  ShoppingCart, Store } from "lucide-react";
 import Link from "next/link";
 import { useCart } from "@/app/context/CartContext";
 
@@ -20,7 +20,9 @@ export default function Menu() {
                             <span className="absolute mt-[100%] ml-[100%] font-bold">{items.length}</span>
                         </li>
                     </Link>
-                    <li className="flex justify-center items-center cursor-pointer bg-white text-gray-800 py-2 px-6">Login</li>
+                    <Link href="/login">
+                        <li className="flex justify-center items-center cursor-pointer bg-white text-gray-800 py-2 px-6">Login</li>
+                    </Link>
                 </ul>
             </nav>
         </header>
