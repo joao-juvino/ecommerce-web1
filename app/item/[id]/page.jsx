@@ -7,12 +7,14 @@ import Carousel from "@/app/components/Carousel";
 import { useParams, useRouter } from "next/navigation";
 import { getNItems } from "@/utils/functions";
 import items from "@/mock/items.json";
+import { useCart } from "@/app/context/CartContext";
 import "./zoom.css";
 
 export default function ItemDetails() {
     const params = useParams();
     const [item, setItem] = useState(null);
     const router = useRouter();
+    const { addItem } = useCart();
 
     useEffect(() => {
         const loggedInUser = localStorage.getItem("loggedInUser");
@@ -50,7 +52,7 @@ export default function ItemDetails() {
                     />
                 </div>
             </div>
-            <button className="cursor-pointer bg-[#ba4949] w-50 py-3 text-white ml-10">Adicionar ao carrinho</button>
+            <button onClick={() => addItem(item)} className="cursor-pointer bg-[#ba4949] w-50 py-3 text-white ml-10">Adicionar ao carrinho</button>
             <div className="bg-white relative -top-[80x]">
                 <Carousel title={"Produtos similares"} items={getNItems(items)} />
             </div>

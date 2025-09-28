@@ -1,3 +1,4 @@
+"use client";
 import Stars from "@/app/components/Stars";
 import RangeSlider from "@/app/components/RangeSlider";
 import Card from "@/app/components/Card";
@@ -5,9 +6,10 @@ import BasicFilter from "@/app/components/BasicFilter";
 import { getNItems } from "@/utils/functions";
 import items from "@/mock/items.json";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 export default function Search() {
+    const params = useParams();
     const router = useRouter();
 
     useEffect(() => {
@@ -67,9 +69,13 @@ export default function Search() {
             <div className="p-5">
                 <h2 className="text-2xl font-bold mb-5 text-gray-900">Resultados:</h2>
                 <div className="flex flex-wrap justify-start gap-5">
-                    {getNItems(items).map(item => (
-                        <Card key={item.id} {...item} showButton={true} />
-                    ))}
+                    {items.map(item => {
+                        if (item.nome.toLowerCase().includes(params.nome.toLowerCase())) {
+                            return <Card key={item.id} {...item} showButton={true} />
+                        }
+                    }
+                    )
+                    }
                 </div>
             </div>
         </div>

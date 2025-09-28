@@ -46,7 +46,7 @@ export default function ViewItem({ imgs }) {
             <div>
                 <div
                     id="zoom"
-                    className="relative cursor-pointer"
+                    className="relative cursor-pointer w-90 h-90"
                     style={{
                         "--url": `url(${currentImage || '/img/watch.png'})`,
                         "--display": displayZoom,
@@ -56,9 +56,9 @@ export default function ViewItem({ imgs }) {
                 >
                     <Image
                         src={currentImage || "/img/watch.png"}
-                        width={350}
-                        height={350}
                         alt="imagem do item"
+                        fill
+                        className="object-contain p-2"
                     />
                 </div>
             </div>

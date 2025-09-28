@@ -61,11 +61,11 @@ export default function Login() {
         <div className="container" ref={containerRef}>
             <div className="form-container sign-up">
                 <form onSubmit={handleSignup}>
-                    <h1 className="mb-3">Create Account</h1>
-                    <span>or use your email for registration</span>
+                    <h1 className="mb-3">Criar conta</h1>
+                    <span>ou use seu e-mail para se cadastrar</span>
                     <input
                         type="text"
-                        placeholder="Name"
+                        placeholder="Nome"
                         value={signupData.name}
                         onChange={e => setSignupData({ ...signupData, name: e.target.value })}
                         required
@@ -79,19 +79,19 @@ export default function Login() {
                     />
                     <input
                         type="password"
-                        placeholder="Password"
+                        placeholder="Senha"
                         value={signupData.password}
                         onChange={e => setSignupData({ ...signupData, password: e.target.value })}
                         required
                     />
-                    <button type="submit">Sign Up</button>
+                    <button type="submit">Cadastro</button>
                 </form>
             </div>
 
             <div className="form-container sign-in">
                 <form onSubmit={handleSignin}>
-                    <h1 className="mb-3">Sign In</h1>
-                    <span>or use your email password</span>
+                    <h1 className="mb-3">Entrar</h1>
+                    <span>use sua senha cadastrada previamente</span>
                     <input
                         type="email"
                         placeholder="Email"
@@ -101,27 +101,26 @@ export default function Login() {
                     />
                     <input
                         type="password"
-                        placeholder="Password"
+                        placeholder="Senha"
                         value={signinData.password}
                         onChange={e => setSigninData({ ...signinData, password: e.target.value })}
                         required
                     />
-                    <a href="#">Forget Your Password?</a>
-                    <button type="submit" className="bg-red-500">Sign In</button>
+                    <button type="submit" className="bg-red-500">Entrar</button>
                 </form>
             </div>
 
             <div className="toggle-container">
                 <div className="toggle">
                     <div className="toggle-panel toggle-left">
-                        <h1>Welcome Back!</h1>
-                        <p>Enter your personal details to use all of site features</p>
-                        <button onClick={handleDeactive} className="bthidden">Sign In</button>
+                        <h1>Bem-vindo de volta!</h1>
+                        <p>Entre com seus dados para acessar as funcionalidades do site</p>
+                        <button onClick={handleDeactive} className="bthidden">Entrar</button>
                     </div>
                     <div className="toggle-panel toggle-right">
-                        <h1>Hello, Friend!</h1>
-                        <p>Register with your personal details to use all of site features</p>
-                        <button onClick={handleActive} className="bthidden">Sign Up</button>
+                        <h1>Olá!</h1>
+                        <p>Entre com seus dados para acessar as funcionalidades do site</p>
+                        <button onClick={handleActive} className="bthidden">Cadastro</button>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import { useCart } from "@/app/context/CartContext";
 export default function Card({ id, nome, preco_original, preco, parcelas, valor_parcela, imgs, showButton = false }) {
     const { addItem } = useCart();
 
-    function handleAddItemToCart(item){
+    function handleAddItemToCart(item) {
         addItem(item);
     }
 
@@ -19,12 +19,12 @@ export default function Card({ id, nome, preco_original, preco, parcelas, valor_
                 }}
                 className="cursor-pointer flex flex-col items-center !pt-2 bg-white text-black">
                 <div className="h-50 w-50 mx-5">
-                    <div className="relative w-full h-50">
+                    <div className="relative w-50 h-50">
                         <Image
                             src={imgs[0]}
                             alt="Relógio"
                             fill
-                            className="object-cover rounded-lg"
+                            className="object-contain p-2"
                         />
                     </div>
                 </div>
@@ -37,7 +37,7 @@ export default function Card({ id, nome, preco_original, preco, parcelas, valor_
                     installmentsAmount={parcelas}
                     installmentsValue={valor_parcela}
                 />
-                {showButton && <button onClick={() => handleAddItemToCart({ id, nome, preco_original, preco, parcelas, valor_parcela, imgs})} className="cursor-pointer bg-[#ba4949] text-white mt-5 px-6 py-2 rounded-full">Adicionar</button>}
+                {showButton && <button onClick={() => handleAddItemToCart({ id, nome, preco_original, preco, parcelas, valor_parcela, imgs })} className="cursor-pointer bg-[#ba4949] text-white mt-5 px-6 py-2 rounded-full">Adicionar</button>}
             </div>
         </Link>
     );
